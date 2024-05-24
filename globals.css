@@ -1,0 +1,189 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  padding: none;
+  border: none;
+  list-style: none;
+}
+
+:root {
+  --color-gray-0: #fff;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #dadee2;
+  --color-gray-300: rgba(255, 255, 255, 0.5);
+  --color-gray-300: #8e9093;
+  --color-gray-400: #999;
+  --color-gray-500: #44484b;
+  --color-gray-600: #363636;
+  --color-gray-700: #222;
+  --color-gray-800: #1f1f1f;
+  --color-gray-900: #111;
+
+  --color-primary: #0c935f;
+  --color-secondary: #006c42;
+
+  --transition: all 300ms ease;
+
+  --container-width-lg: 76%;
+  --container-width-md: 94%;
+}
+
+
+main.dark {
+  --color-gray-0: rgb(12, 16, 35);
+  --color-gray-100: rgba(0, 0, 0, 0.6);
+  --color-gray-200: #222;
+  --color-gray-300: rgba(0, 0, 0, 0.6);
+  --color-gray-400: rgba(0, 0, 0, 0.2);
+  --color-gray-500: #44484b;
+  --color-gray-600: #d8cdcd;
+  --color-gray-700: #e9eff4;
+  --color-gray-800: #fafbfd;
+  --color-gray-900: #eee;
+  background: #121235 url(./assets/light-texture.png); /* 8px * 8px canvas with right-angled trangled white bg with 8% opacity */
+
+  --color-secondary-variant: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2));
+  --color-primary-variant: linear-gradient(-45deg, transparent, rgba(255, 255, 255, 0.2));
+}
+
+
+main{
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  color: var(--color-gray-600);
+  background: var(--color-gray-100) url('./assets/dark-texture.png');
+}
+
+.container{
+  margin: 0 auto;
+  width: var(--container-width-lg);
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: 900;
+  color: var(--color-gray-900);
+  line-height: 1;
+}
+h1{
+  font-size: 3.2rem;
+}
+h2{
+  font-size: 2.5rem;
+}
+h3{
+  font-size: 2rem;
+}
+h4{
+  font-size: 1.3rem;
+}
+h6{
+  font-size: 0.8rem;
+}
+.btn{
+  display: inline-block;
+  background: var(--color-gray-0);
+  padding: .8rem 2rem;
+  width: fit-content;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.btn-sm{
+  padding: .5rem 0 1.2rem;
+}
+.btn-lg{
+  padding: 1.3rem 2.3rem;
+}
+.btn-primary{
+  background: var(--color-primary);
+  color: white !important;
+}
+.btn-primary:hover{
+  background: var(--color-secondary);
+}
+.btn-light{
+  background: var(--color-gray-0);
+}
+
+a{
+  color: var(--color-gray-900);
+}
+a.active{
+  color: var(--color-primary);
+}
+img{
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+
+section header footer{
+  position: relative;
+  z-index: 1;
+}
+
+section > h2, section > p{
+  text-align: center;
+} 
+section > p{
+  margin: .5rem 0 4rem;
+}
+
+
+/* Swiper JS needs same classes that's why we can't use modules */
+.swiper{
+  margin-bottom: 7rem;
+  padding-bottom: 5rem;
+  width: 30rem;
+}
+
+.swiper-wrapper {
+  padding: 3rem 0 6rem;
+}
+.swiper-slide{
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  cursor: default;
+  background: var(--color-gray-0); 
+}
+.swiper-pagination .swiper-pagination-bullet{
+  width: .7rem ;
+  height: .7rem ;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background: var(--color-primary);
+}
+main.dark .swiper-pagination .swiper-pagination-bullet{
+  background: rgba(255, 255, 255, 0.4);
+}
+main.dark .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background: var(--color-primary);
+}
+
+/* ............Media Screen............ */
+@media (max-width:600px) {
+  h1{
+    font-size: 2.3rem;
+  }  
+  h2{
+    font-size: 2rem;
+  }
+  h3{
+    font-size: 1.8rem;
+  }
+  section > p {
+    margin-bottom: 3rem;
+  }
+  .container{
+    width: var(--container-width-md);
+    margin-inline: auto;
+  }
+  .swiper{
+    width: var(--container-width-md);
+  }
+}
